@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmis0ya1jx6qd"
+path="res://.godot/imported/barrel_small_stack.obj-7f06a5a13394e7e21511a601e80791c3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrel_small_stack.obj-7f06a5a13394e7e21511a601e80791c3.mesh"]
+
+source_file="res://Characters/Models/Assets/obj/barrel_small_stack.obj"
+dest_files=["res://.godot/imported/barrel_small_stack.obj-7f06a5a13394e7e21511a601e80791c3.mesh", "res://.godot/imported/barrel_small_stack.obj-7f06a5a13394e7e21511a601e80791c3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

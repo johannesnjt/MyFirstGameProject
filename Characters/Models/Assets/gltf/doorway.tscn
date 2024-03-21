@@ -1,0 +1,307 @@
+[gd_scene load_steps=31 format=3 uid="uid://cnmgg4x12odvd"]
+
+[ext_resource type="PackedScene" uid="uid://2oxcwebyxr6" path="res://Characters/Models/Assets/gltf/wall_doorway.glb" id="1_bojco"]
+[ext_resource type="Script" path="res://doorway.gd" id="2_6fr0j"]
+
+[sub_resource type="Animation" id="Animation_t02x7"]
+resource_name = "Close_Door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x8fi5"]
+resource_name = "Open_Door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_chl37"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o848k"]
+resource_name = "Open_Door_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o5jfe"]
+resource_name = "Close_Door_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpv2e"]
+_data = {
+"Close_Door": SubResource("Animation_t02x7"),
+"Close_Door_Out": SubResource("Animation_o5jfe"),
+"Open_Door": SubResource("Animation_x8fi5"),
+"Open_Door_Out": SubResource("Animation_o848k"),
+"RESET": SubResource("Animation_chl37")
+}
+
+[sub_resource type="Animation" id="Animation_gqbd3"]
+resource_name = "Closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bv0kx"]
+resource_name = "Door_Close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 90, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 90, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c8cp1"]
+resource_name = "Door_Close_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xnjsh"]
+resource_name = "Door_Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bd1ui"]
+resource_name = "Door_Open_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pf352"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/CollisionShape3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_573ac"]
+_data = {
+"Closed": SubResource("Animation_gqbd3"),
+"Door_Close": SubResource("Animation_bv0kx"),
+"Door_Close_Out": SubResource("Animation_c8cp1"),
+"Door_Open": SubResource("Animation_xnjsh"),
+"Door_Open_Out": SubResource("Animation_bd1ui"),
+"RESET": SubResource("Animation_pf352")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mdjoh"]
+animation = &"Closed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bkt7l"]
+animation = &"Door_Close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_62rjm"]
+animation = &"Door_Close_Out"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sofq"]
+animation = &"Door_Open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4n0m8"]
+animation = &"Door_Open_Out"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fg8rv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_74re0"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5lbm1"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tl81x"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_obgw8"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r6yfb"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b02sm"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x1ycf"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sange"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7kp77"]
+states/Closed/node = SubResource("AnimationNodeAnimation_mdjoh")
+states/Closed/position = Vector2(430.315, 16.5975)
+states/Door_Close/node = SubResource("AnimationNodeAnimation_bkt7l")
+states/Door_Close/position = Vector2(844.156, -62.4025)
+states/Door_Close_Out/node = SubResource("AnimationNodeAnimation_62rjm")
+states/Door_Close_Out/position = Vector2(875.156, 91.5975)
+states/Door_Open/node = SubResource("AnimationNodeAnimation_1sofq")
+states/Door_Open/position = Vector2(640.156, -62.4025)
+states/Door_Open_Out/node = SubResource("AnimationNodeAnimation_4n0m8")
+states/Door_Open_Out/position = Vector2(587.156, 91.5975)
+states/End/position = Vector2(1018, 16.5975)
+states/Start/position = Vector2(283, 16.5975)
+transitions = ["Start", "Closed", SubResource("AnimationNodeStateMachineTransition_fg8rv"), "Closed", "Door_Open", SubResource("AnimationNodeStateMachineTransition_74re0"), "Closed", "Door_Open_Out", SubResource("AnimationNodeStateMachineTransition_5lbm1"), "Door_Open_Out", "Door_Close_Out", SubResource("AnimationNodeStateMachineTransition_tl81x"), "Door_Close_Out", "Door_Open_Out", SubResource("AnimationNodeStateMachineTransition_obgw8"), "Door_Open", "Door_Close", SubResource("AnimationNodeStateMachineTransition_r6yfb"), "Door_Close", "Door_Open", SubResource("AnimationNodeStateMachineTransition_b02sm"), "Door_Close", "Door_Open_Out", SubResource("AnimationNodeStateMachineTransition_x1ycf"), "Door_Close_Out", "Door_Open", SubResource("AnimationNodeStateMachineTransition_sange")]
+graph_offset = Vector2(239.207, -116.162)
+
+[node name="wall_doorway" instance=ExtResource("1_bojco")]
+
+[node name="StaticBody3D" parent="wall_doorway2/wall_doorway_door" index="0"]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("2_6fr0j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wall_doorway2/wall_doorway_door/StaticBody3D" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_wpv2e")
+}
+
+[node name="CollisionShape3D" parent="wall_doorway2/StaticBody3D" index="0"]
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_573ac")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_7kp77")
+anim_player = NodePath("../AnimationPlayer")

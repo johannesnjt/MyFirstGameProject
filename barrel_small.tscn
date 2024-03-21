@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpdmksaf3qxch"]
+
+[ext_resource type="Script" path="res://barrel_small.gd" id="1_bc2vr"]
+[ext_resource type="PackedScene" uid="uid://c4uejnedr71rw" path="res://Characters/Models/Assets/gltf/barrel_small.gltf.glb" id="2_ocbcw"]
+[ext_resource type="PackedScene" uid="uid://cgvhsviyla0qg" path="res://Characters/Models/Assets/gltf/barrel_small_fractured.glb" id="3_03idc"]
+[ext_resource type="Script" path="res://Hurtbox.gd" id="4_jxngi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_210v4"]
+
+[node name="barrel_small" type="Node3D"]
+script = ExtResource("1_bc2vr")
+fragment_collision_layer = 4
+fragment_collision_mask = 7
+
+[node name="barrel_small" parent="." instance=ExtResource("2_ocbcw")]
+
+[node name="StaticBody3D" parent="barrel_small/barrel_small" index="0"]
+collision_layer = 2
+collision_mask = 8
+
+[node name="barrel_small_fractured" parent="." instance=ExtResource("3_03idc")]
+visible = false
+
+[node name="ExplodeOrigin" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.524708, 0)
+
+[node name="Hurtbox" type="Area3D" parent="." groups=["hurtbox"]]
+collision_layer = 2
+collision_mask = 8
+monitorable = false
+script = ExtResource("4_jxngi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_210v4")
+
+[editable path="barrel_small"]
+[editable path="barrel_small_fractured"]

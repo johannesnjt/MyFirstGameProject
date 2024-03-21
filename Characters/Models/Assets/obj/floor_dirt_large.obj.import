@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgl13ut4paurp"
+path="res://.godot/imported/floor_dirt_large.obj-722ba979c314745977d6ed84745b57fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_dirt_large.obj-722ba979c314745977d6ed84745b57fd.mesh"]
+
+source_file="res://Characters/Models/Assets/obj/floor_dirt_large.obj"
+dest_files=["res://.godot/imported/floor_dirt_large.obj-722ba979c314745977d6ed84745b57fd.mesh", "res://.godot/imported/floor_dirt_large.obj-722ba979c314745977d6ed84745b57fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

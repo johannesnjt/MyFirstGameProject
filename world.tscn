@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://lksd2hmhbxke"]
+
+[ext_resource type="PackedScene" uid="uid://6lhf2c6nnu53" path="res://barbarian-player.tscn" id="1_j01r7"]
+[ext_resource type="PackedScene" uid="uid://powq8usxgpou" path="res://Characters/Models/Assets/gltf/barrel_large.gltf.glb" id="2_my02h"]
+[ext_resource type="PackedScene" uid="uid://cpdmksaf3qxch" path="res://barrel_small.tscn" id="3_fpc40"]
+[ext_resource type="PackedScene" uid="uid://b37vyiycpkv18" path="res://wall_doorway.tscn" id="4_kbdwb"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ctxao"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_euic1"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[node name="World" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ctxao")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_euic1")
+
+[node name="Barbarian" parent="." instance=ExtResource("1_j01r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250156, 0, 1.29621)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.416392, -0.671232, -0.613242, -0.412153, -0.740567, 0.530745, -0.8104, 0.0317518, -0.585017, 0, 16.1724, 0)
+
+[node name="barrel_large_gltf" parent="." instance=ExtResource("2_my02h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93802, -4.76837e-07, 0.0728416)
+
+[node name="barrel_small" parent="." groups=["hurtbox"] instance=ExtResource("3_fpc40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0387692, 0, -3.18602)
+
+[node name="wall_doorway" parent="." instance=ExtResource("4_kbdwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77272, 0, -2.95032)

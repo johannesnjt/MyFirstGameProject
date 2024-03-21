@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dldopf8w245hc"
+path="res://.godot/imported/floor_foundation_diagonal_corner.obj-bda01c8bded0b9397a39e991f1ccad71.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_foundation_diagonal_corner.obj-bda01c8bded0b9397a39e991f1ccad71.mesh"]
+
+source_file="res://Characters/Models/Assets/obj/floor_foundation_diagonal_corner.obj"
+dest_files=["res://.godot/imported/floor_foundation_diagonal_corner.obj-bda01c8bded0b9397a39e991f1ccad71.mesh", "res://.godot/imported/floor_foundation_diagonal_corner.obj-bda01c8bded0b9397a39e991f1ccad71.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
